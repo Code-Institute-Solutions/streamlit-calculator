@@ -1,3 +1,6 @@
+image:
+  file: .gitpod.dockerfile
+
 tasks:
   - init: pip install -r requirements.txt
 
@@ -5,3 +8,6 @@ tasks:
 vscode:
   extensions:
     - ms-python.python
+    - hookyqr.beautify
+    - matt-rudge.auto-open-preview-panel
+    - formulahendry.auto-close-tag
