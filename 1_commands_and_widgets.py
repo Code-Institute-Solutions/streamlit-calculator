@@ -148,7 +148,7 @@ st.write("---")  # creates a horizontal line, useful to separate the content in 
 # st.radio(label='Radio button options', options=[1,2,3])
 # st.write("---")
 
-# st.selectbox(label='Select one single option', options=[1,2,3])
+# st.selectbox(label='Select one single option', options=[1,2,3], key="1")
 # st.write("---")
 
 # st.multiselect(label='Select multiple options', options=[1,2,3])
@@ -178,25 +178,25 @@ st.write("---")  # creates a horizontal line, useful to separate the content in 
 
 
 
-#### You probably noticed there is no much value when you randomly create widgets
-#### The idea is to assign them to a variable and this variable is used to interact with the application
-# option = st.selectbox(label='Pick one:', options=[1,2,3,'A'])
+### You probably noticed there is no much value when you randomly create widgets
+### The idea is to assign them to a variable and this variable is used to interact with the application
+# option = st.selectbox(label='Pick one:', options=[1,2,3,'A'], key="2")
 # st.write(f"* I see you selected {option}, and its type is {type(option)}")
 # st.write("---")
 
 
 
-#### you can create 'columns' (or split the row space) and assign multiple items/widgets
-#### you should use st.beta_columns() and inform amount of columns
-#### that will be assigned to individual variables, ie.: if there were 3 columns, you would have col1, col2, col3
-#### you will define the content on each variable with the command "with:"
-#### this example prints a list in the first column, and display a widget in the second column
+### you can create 'columns' (or split the row space) and assign multiple items/widgets
+### you should use st.beta_columns() and inform amount of columns
+### that will be assigned to individual variables, ie.: if there were 3 columns, you would have col1, col2, col3
+### you will define the content on each variable with the command "with:"
+### this example prints a list in the first column, and display a widget in the second column
 
 # col1, col2 = st.beta_columns(2)
 # with col1:
 #     st.write([1,2,3])
 # with col2:
-#     option = st.selectbox(label='Pick one:', options=[1,2,3,'A'])
+#     option = st.selectbox(label='Pick one:', options=[1,2,3,'A'], key="3")
 
 # st.write(f"* I see you selected {option}, and its type is {type(option)}")
 
