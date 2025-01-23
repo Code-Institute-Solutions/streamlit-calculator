@@ -29,7 +29,7 @@ st.info("* This is made with st.info()") # Display a text with informational sty
 st.success("* This is made with st.success()") # Display a text with success style.
 st.warning("* This is made with st.warning()") # Display a text with warning style.
 st.error("* This is made with st.error()") # Display a text with error style.
-st.write("---")  # creates a horizontal line, useful to separate the content in the page
+st.write("---")  # creates a horizontal line, useful to separate the content on the page
 
 
 
@@ -41,8 +41,8 @@ st.write("---")  # creates a horizontal line, useful to separate the content in 
 # my_list = [10,50,409] # Python list
 # my_dict = {'Number':[1,2,3], 'Color': ['Blue', 'Yellow', 'Green']} # python dictionary
 
-##### we will use pandas and numpy to generate a DataFrame. 
-##### For now, think a DataFrame as a table, with columns, rows and data.
+##### We will use pandas and numpy to generate a DataFrame. 
+##### For now, think of a DataFrame as a table with columns, rows and data.
 # import numpy as np
 # import pandas as pd 
 # np.random.seed(1)
@@ -69,10 +69,10 @@ st.write("---")  # creates a horizontal line, useful to separate the content in 
 ### Display plots ###
 ################################################################################
 
-##### We will use matplotlib, seaborn and plotly  for data visualization
-##### for now, we just need to understand the plotting capability
-##### the commands and its usabilitiy will come clear across the lessons and walkthrough project
-##### we will use a generated DataFrame
+##### We will use Matplotlib, seaborn and Plotly  for data visualization
+##### For now, we just need to understand the plotting capability
+##### The commands and their usability will become clear across the lessons and walkthrough project
+##### We will use a generated DataFrame
 # import numpy as np
 # import pandas as pd 
 # np.random.seed(1)
@@ -86,15 +86,15 @@ st.write("---")  # creates a horizontal line, useful to separate the content in 
 # sns.set_style("whitegrid")
 # fig, axes = plt.subplots()
 # sns.scatterplot(data=df, x='Col1', y='Col2', ax=axes)
-# st.pyplot(fig) # When you render a Matplotlib or Seaborn plot, you wil use st.pyplot()
-#                # for example, in a jupyter notebook, we render with plt.show()
-#                # don't worry, we will see that with more detail soon 
+# st.pyplot(fig) # When you render a Matplotlib or Seaborn plot, you will use st.pyplot()
+#                # For example, in a jupyter notebook, we render with plt.show()
+#                # Don't worry. We will see that with more detail soon 
 # st.write("---")
 
 # st.write("* This example uses Plotly - an interactive data visualization library")
 # import plotly.express as px
 # fig = px.scatter(data_frame=df, x='Col1', y='Col2',width=800,height=400)
-# st.plotly_chart(fig) # When you render a Plotly plot, you wil use st.plotly_chart()
+# st.plotly_chart(fig) # When you render a Plotly plot, you will use st.plotly_chart()
 #                      # in a jupyter notebook, we render with plt.show() 
 # st.write("---")
 
@@ -107,14 +107,14 @@ st.write("---")  # creates a horizontal line, useful to separate the content in 
 ################################################################################
 
 #### Currently, every time you reload the dashboard page, so is the script
-#### this may cause delay in your app, ie.: you may reload multiple time the same data 
-#### to solve that, you can cache your data by adding a decorator @st.cache in a function that loads your data
-#### in this example you might not notice the speed difference, but in real applications this difference is notable
+#### This may cause a delay in your app, i.e., you may reload multiple time the same data 
+#### To solve that, you can cache your data by adding a decorator @st.cache_data in a function that loads your data
+#### In this example, you might not notice the speed difference, but in real applications, this difference is notable
 
 # import numpy as np
 # import pandas as pd 
 
-# @st.cache
+# @st.cache_data
 # def load_your_data():
 #     np.random.seed(1)
 #     df = pd.DataFrame(data={"Col1":np.random.randint(low=-100,high=100,size=10),
@@ -132,7 +132,7 @@ st.write("---")  # creates a horizontal line, useful to separate the content in 
 ### Display widgets ###
 ################################################################################
 
-##### Feel free to play around with all widgets options
+##### Feel free to play around with all widget options
 # if st.button('Hit me'):  # if you click the button, it is True.
 #     st.write("Oh, you did!")
 # else:
@@ -178,21 +178,21 @@ st.write("---")  # creates a horizontal line, useful to separate the content in 
 
 
 
-### You probably noticed there is no much value when you randomly create widgets
-### The idea is to assign them to a variable and this variable is used to interact with the application
+### You probably noticed there is not much value when you randomly create widgets
+### The idea is to assign them to a variable, and this variable is used to interact with the application
 # option = st.selectbox(label='Pick one:', options=[1,2,3,'A'], key="2")
 # st.write(f"* I see you selected {option}, and its type is {type(option)}")
 # st.write("---")
 
 
 
-### you can create 'columns' (or split the row space) and assign multiple items/widgets
-### you should use st.beta_columns() and inform amount of columns
+### You can create 'columns' (or split the row space) and assign multiple items/widgets
+### you should use st.columns() and inform amount of columns
 ### that will be assigned to individual variables, ie.: if there were 3 columns, you would have col1, col2, col3
 ### you will define the content on each variable with the command "with:"
-### this example prints a list in the first column, and display a widget in the second column
+### This example prints a list in the first column and displays a widget in the second column
 
-# col1, col2 = st.beta_columns(2)
+# col1, col2 = st.columns(2)
 # with col1:
 #     st.write([1,2,3])
 # with col2:
