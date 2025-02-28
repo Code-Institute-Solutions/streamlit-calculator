@@ -4,7 +4,7 @@ import streamlit as st
 def calculator_body():
     """ Lays out calculator page"""
     st.write("---")
-    col1, col2, col3 = st.beta_columns(3)
+    col1, col2, col3 = st.columns(3)
     with col1:
         num1 = st.number_input(label='Enter the first integer', step=1, key="1")
     with col2:
